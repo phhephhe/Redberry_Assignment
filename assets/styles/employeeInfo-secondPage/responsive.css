@@ -1,1 +1,74 @@
 /* Employee Info Second page - responsive */
+@media screen and (max-width: 390px){
+    /* header */
+    .back-icon{      
+        width: 53px;
+        height: 53px;
+        left: 7px;
+        top: 16px;
+        background-color: transparent;
+    }
+    .header-texts{
+        padding: 31px 0px 5px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .employee-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .page-counter{
+        display: block;
+        color: #898989;
+        font-size: 14px;
+    }
+    .laptop-features, .line{
+        display: none;
+    }
+    /* form */
+    .form-container{
+        padding: 0px 16px;
+        border-radius: 12px 12px 0px 0px;
+    }
+    .fullname-container{
+        display: block;
+    }
+    .firstname{
+        margin-top: 38px;
+    }
+    .lastname{
+        margin-top: 23px;
+    }
+    .team-select-container{
+        margin-top: 26px;
+    }
+    .position-select-container{
+        margin-top: 46px;
+    }
+    .email, .mobile{
+        margin-top: 25px;
+    }
+    .next-button{ 
+        font-size: 18px;
+        padding: 12px 27.5px;
+        line-height: 22px;
+    }
+    .next-button-container{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        margin: 43px 0px;
+    }
+    .desktop{
+        display: none;
+    }
+    .responsive-mobile{
+        display: block;
+    }
+    /* LOGO */
+    .redberry-photo{  
+        display: none;
+    }
+
+}

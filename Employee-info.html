@@ -19,11 +19,12 @@
                 </a>
             </div>
             <div class="header-texts">
-                <div>
+                <div class="employee-info">
                         თანამშრომლის ინფო
                         <div class="line"></div>
+                        <div class="page-counter">1/2</div>
                 </div>
-                <div>
+                <div class="laptop-features">
                         ლეპტოპის მახასიათებლები
                 </div>
             </div>    
@@ -42,18 +43,19 @@
                         <p class="paragraph">მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
                     </div>
                 </div>
-                <div class="selects-container">
-                    <select name="team" id="team" class="select">
-                        <option selected disabled>თიმი</option>
-                        <option value="test">test</option>
-                    </select>
-                </div>
-                <div>
-                    <select name="position" id="position" class="select">
-                        <option selected disabled>პოზიცია</option>
-                        <option value="test">test</option>
-                    </select>
-                </div>
+                
+                    <div class="team-select-container">
+                        <select name="team" id="team" class="select">
+                            <option selected disabled>თიმი</option>
+                            <option value="test">test</option>
+                        </select>
+                    </div>
+                    <div class="position-select-container">
+                        <select name="position" id="position" class="select">
+                            <option selected disabled>პოზიცია</option>
+                            <option value="test">test</option>
+                        </select>
+                    </div>
                 <div class="email">
                     <label for="email">მეილი</label>
                     <input type="email" class="input" name="email" id="email" placeholder="beridzedavit07@redberry.ge">
@@ -62,7 +64,11 @@
                 <div class="mobile">
                     <label for="mobile">ტელეფონის ნომერი</label>
                     <input type="text" class="input" name="mobile" id="mobile" placeholder="+995 555 97 93 03">
-                    <p class="paragraph">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</p>
+
+                    <p class="paragraph">
+                        <span class="desktop">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
+                        <span class="responsive-mobile">ქართული მობ-ნომრის ფორმატი</span>
+                    </p>
                 </div>
                 <div class="next-button-container">
                     <button type="submit" class="next-button">შემდეგი</button>
