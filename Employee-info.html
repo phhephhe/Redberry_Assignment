@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redberry</title>
+    <link rel="stylesheet" href="assets/styles/reset.css">
+    <link rel="stylesheet" href="assets/styles/employeeInfo-secondPage/style.css">
+    <link rel="stylesheet" href="assets/styles/employeeInfo-secondPage/responsive.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <div>
+                <a class="back-icon" href="index.html">
+                    <img src="/assets/images/Vector.png" alt="Vector">
+                </a>
+            </div>
+            <div class="header-texts">
+                <div>
+                        თანამშრომლის ინფო
+                        <div class="line"></div>
+                </div>
+                <div>
+                        ლეპტოპის მახასიათებლები
+                </div>
+            </div>    
+        </header>
+        <div class="form-container">
+            <form action="" class="form">
+                <div class="fullname-container">
+                    <div class="firstname">
+                        <label for="firstname">სახელი</label>
+                        <input type="text" class="input" name="firstname" id="firstname" placeholder="დავით">
+                        <p class="paragraph">მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
+                    </div>
+                    <div class="lastname">
+                        <label for="lastname">გვარი</label>
+                        <input type="text" class="input" name="lastname" id="lastname" placeholder="ბერიძე">
+                        <p class="paragraph">მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
+                    </div>
+                </div>
+                <div class="selects-container">
+                    <select name="team" id="team" class="select">
+                        <option selected disabled>თიმი</option>
+                        <option value="test">test</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="position" id="position" class="select">
+                        <option selected disabled>პოზიცია</option>
+                        <option value="test">test</option>
+                    </select>
+                </div>
+                <div class="email">
+                    <label for="email">მეილი</label>
+                    <input type="email" class="input" name="email" id="email" placeholder="beridzedavit07@redberry.ge">
+                    <p class="paragraph">უნდა მთავრდებოდეს @redberry.ge-ით</p>
+                </div>
+                <div class="mobile">
+                    <label for="mobile">ტელეფონის ნომერი</label>
+                    <input type="text" class="input" name="mobile" id="mobile" placeholder="+995 555 97 93 03">
+                    <p class="paragraph">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</p>
+                </div>
+                <div class="next-button-container">
+                    <button type="submit" class="next-button">შემდეგი</button>
+                </div>
+            </form>
+        </div>
+        <div class="redberry-photo">
+            <img src="/assets/images/Logo.png" alt="Logo">
+        </div>
+    </div>
+    
+</body>
+</html>

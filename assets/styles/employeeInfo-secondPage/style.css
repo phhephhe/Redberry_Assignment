@@ -1,0 +1,127 @@
+/* Employee Info Second page - styles */
+/* header */
+.main-container{
+    width: 100%;
+    background-color: #F6F6F6;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.back-icon{
+    position: absolute;
+    width: 53px;
+    height: 53px;
+    left: 70px;
+    top: 53px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-texts{
+    display: flex;
+    margin-top: 91px;
+    margin-bottom: 40px;
+    gap: 66px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.5px;
+    color: #232323;
+}
+.line{
+    border: 1px solid black ;
+    margin-top: 15px;
+    margin: 15px 15px 0;
+}
+/* form */
+.form-container{
+    padding: 96px 174px 0px;
+    background-color: white;
+    max-width: 1226px;
+    width: 100%;
+    margin: 0 auto;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.fullname-container{
+    display: flex;
+    width: 100%;
+    gap: 40px;
+}
+.firstname, .lastname{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+}
+.paragraph{
+    color: #2E2E2E;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+}
+.input{
+    width: 100%;
+    margin: 8px 0px;
+    outline: none;
+    border: 1px solid #8AC0E2; 
+    border-radius: 5px;
+    padding: 18px 12px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+}
+.input:focus{
+    caret-color: #6499FF;
+    background-color: #2B4BF20F;
+}
+.selects-container{
+    display: flex;
+    flex-direction: column;
+    gap: 53px;
+}
+.select{
+    width: 100%;
+    margin-top: 53px;
+    background-color: #EBEBEB;
+    border-radius: 8px;
+    padding: 19px 16px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+}
+.email, .mobile{
+    margin-top: 51px;
+}
+.next-button-container{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin: 51px 0px 45px;
+}
+.next-button{
+    background-color:#62A1EB;
+    color: white;   
+    font-size: 20px;
+    padding: 18px 45.5px;
+    line-height: 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* LOGO */
+.redberry-photo{  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 67px;
+    padding-bottom: 45px;
+}
