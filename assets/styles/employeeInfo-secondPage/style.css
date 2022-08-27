@@ -132,3 +132,13 @@
     padding-top: 67px;
     padding-bottom: 45px;
 }
+/* VALIDATION ERROR */
+.valid-error{
+    color: #E52F2F;
+}
+.valid-error p {
+    color: #E52F2F;
+}
+.valid-error input {
+    border-color: #E52F2F; 
+} 
