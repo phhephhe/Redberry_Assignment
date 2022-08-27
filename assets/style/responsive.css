@@ -1,0 +1,23 @@
+/* First page - responsive for iPhone12 Pro*/
+@media screen and (max-width: 390px){
+    .mainphoto-desktop{
+        display: none;
+    }
+    .mainphoto-responsive{
+        display: block;
+    }
+    .redberry-logo{
+        margin-top: 67px;
+    }
+    .main-photo-container{
+        margin-top: 117px;
+        margin-bottom: 122px;
+    }
+    .links-container{
+        gap: 16px;
+        margin-bottom: 35px;
+    }
+    .link-button{
+        padding: 18px 67px; 
+    }
+}
