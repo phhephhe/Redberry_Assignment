@@ -30,7 +30,7 @@
             </div>    
         </header>
         <div class="form-container">
-            <form action="" class="form">
+            <form action="" class="form" id="employee-info-form">
                 <div class="fullname-container">
                     <div class="firstname">
                         <label for="firstname">სახელი</label>
@@ -46,25 +46,22 @@
                 
                     <div class="team-select-container">
                         <select name="team" id="team" class="select">
-                            <option selected disabled>თიმი</option>
-                            <option value="test">test</option>
+                            <option value="">თიმი</option>                          
                         </select>
                     </div>
                     <div class="position-select-container">
                         <select name="position" id="position" class="select">
-                            <option selected disabled>პოზიცია</option>
-                            <option value="test">test</option>
+                            <option value="">პოზიცია</option>
                         </select>
                     </div>
                 <div class="email">
                     <label for="email">მეილი</label>
-                    <input type="email" class="input" name="email" id="email" placeholder="beridzedavit07@redberry.ge">
+                    <input type="text" class="input" name="email" id="email" placeholder="beridzedavit07@redberry.ge">
                     <p class="paragraph">უნდა მთავრდებოდეს @redberry.ge-ით</p>
                 </div>
                 <div class="mobile">
                     <label for="mobile">ტელეფონის ნომერი</label>
                     <input type="text" class="input" name="mobile" id="mobile" placeholder="+995 555 97 93 03">
-
                     <p class="paragraph">
                         <span class="desktop">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
                         <span class="responsive-mobile">ქართული მობ-ნომრის ფორმატი</span>

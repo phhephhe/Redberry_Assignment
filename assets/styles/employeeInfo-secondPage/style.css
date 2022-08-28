@@ -98,6 +98,7 @@
 .select{
     width: 100%;
     background-color: #EBEBEB;
+    border: 1.8px solid rgba(0, 0, 0, 0) ;
     border-radius: 8px;
     padding: 19px 16px;
     outline: none;
@@ -142,3 +143,7 @@
 .valid-error input {
     border-color: #E52F2F; 
 } 
+/* select error */
+.valid-error select{
+    border-color:  #E52F2F;
+}

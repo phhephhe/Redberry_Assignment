@@ -1,0 +1,6 @@
+localStorage.removeItem('firstName')
+localStorage.removeItem('lastName')
+localStorage.removeItem('team')
+localStorage.removeItem('position')
+localStorage.removeItem('email')
+localStorage.removeItem('mobile')
