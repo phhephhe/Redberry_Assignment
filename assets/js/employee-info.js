@@ -273,7 +273,7 @@ form.addEventListener('submit', (el) => {
         emailValid &&
         mobileValid
     ) {
-        window.location.href = "/laptop-features.html";
+        window.location.href = "laptop-features.html";
     }
 })
 
