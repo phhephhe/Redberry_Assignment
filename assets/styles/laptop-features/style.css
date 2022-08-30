@@ -59,6 +59,16 @@
     border: 2px dashed #4386A9;
     border-radius: 18px;
 }
+.photo-uploaded{
+    display: none;
+    width: 100%;
+}
+#laptop-photo-img{
+    object-fit: cover;
+    width: 100%;
+    height: 423px;
+    border-radius: 18px;
+}
 .desktop-upload-photo{
     display: flex;
     justify-content: center;
@@ -130,6 +140,7 @@ input[type="file"] {
     font-size: 14px;
     font-weight: 300;
     line-height: 21px;
+    height: 20px;
 }
 .select{
     width: 100%;
@@ -195,3 +206,28 @@ input[type="file"] {
     padding-top: 67px;
     padding-bottom: 45px;
 }
+/* VALIDATION ERROR */
+.valid-error{
+    color: #E52F2F;
+}
+.valid-error p {
+    color: #E52F2F;
+}
+.valid-error input {
+    border-color: #E52F2F; 
+} 
+/* select error */
+.valid-error select{
+    border-color:  #E52F2F;
+}
+.valid-error h4{
+    color: #E52F2F;
+    display: flex;
+}
+.valid-error h4 span{
+    padding-left: 10px;
+    display: block;
+}
+.valid-error .radios-container label {
+    color: black;
+} 

@@ -31,7 +31,7 @@
         </header>
         <div class="form-container">
             <label id="dropContainer" for="photo" class="photo-upload-container">
-                <div class="desktop-upload-photo">
+                <div class="desktop-upload-photo photo-not-uploaded">
                     <span class="photo-warning"><img src="assets/images/photo-warning.png" alt="warning"></span>
                     <h1 class="upload-text">
                         ჩააგდე ან ატვირთე<br>ლეპტოპის ფოტო       
@@ -39,8 +39,17 @@
                     <div class="upload">ატვირთე
                         <input type="file" name="phot" id="photo">
                     </div>
-                </div>    
-                <div class="responsive-upload-photo">
+                </div>
+                <div class="photo-uploaded">
+                    <img src="" alt="" id="laptop-photo-img">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div>src</div>
+                        <label for="photo">\
+                            <input type="file" name="phot" id="photo">
+                        </label>
+                    </div>
+                </div>
+                <div class="responsive-upload-photo photo-not-uploaded">
                     <img src="assets/images/photo-icon.png" alt="photo-icon">
                     <h1 class="upload-text">
                         ლეპტოპის ფოტოს <br> ატვირთვა       
@@ -48,13 +57,14 @@
                     <span class="photo-warning"><img src="assets/images/photo-warning.png" alt="warning"></span>
                 </div>
             </label>
+            
             <div class="flex-container">
-                <div class="div-container">
+                <div class="div-container laptop-name-container">
                     <label for="laptop-name">ლეპტოპის სახელი</label>
                     <input type="text" name="laptop-name" class="input" id="laptop-name" placeholder="HP"> 
                     <p class="paragraph">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </p>
                 </div>
-                <div class="div-container">
+                <div class="div-container laptop-brands-container">
                     <select name="laptop-brand" id="laptop-brand" class="select">
                         <option value="">ლეპტოპის ბრენდი</option>
                     </select>
@@ -62,34 +72,34 @@
             </div>
             <div class="long-line"></div>
             <div class="flex-container">
-                <div class="div-container">
+                <div class="div-container CPU-container">
                     <select name="CPU" id="CPU" class="select">
                         <option value="">CPU</option>
                     </select>
                 </div>
-                <div class="div-container">
+                <div class="div-container CPU-core-container">
                     <label for="CPU-core">CPU-ს ბირთვი</label>
                     <input type="text" name="CPU-core" class="input" id="CPU-core" placeholder="14"> 
                     <p class="paragraph">მხოლოდ ციფრები</p>
                 </div>
-                <div class="div-container">
+                <div class="div-container CPU-threads-container">
                     <label for="CPU-threads">CPU-ს ნაკადი</label>
                     <input type="text" name="CPU-threads" class="input" id="CPU-threads" placeholder="365"> 
                     <p class="paragraph">მხოლოდ ციფრები</p>
                 </div>
             </div>
             <div class="flex-container">
-                <div class="div-container">
+                <div class="div-container RAM-container">
                     <label for="RAM">ლეპტოპის RAM (GB)</label>
                     <input type="text" name="RAM" class="input" id="RAM" placeholder="16"> 
                     <p class="paragraph">მხოლოდ ციფრები</p>
                 </div>
-                <div class="div-container">
-                    <h4 class="memory-title">მეხსიერების ტიპი</h4>
+                <div class="div-container memory-type-container">
+                    <h4 class="memory-title">მეხსიერების ტიპი <span class="photo-warning"><img src="assets/images/photo-warning.png" alt="warning"></span></h4>
                     <div class="radios-container">
-                        <input type="radio" name="memory-type" class="radio" id="ssd">
+                        <input type="radio" name="memory-type" class="radio" id="ssd" value="ssd">
                         <label for="ssd" class="label">SSD</label>
-                        <input type="radio" name="memory-type" class="radio" id="hdd">
+                        <input type="radio" name="memory-type" class="radio" id="hdd" value="hdd">
                         <label for="hdd" class="label">HDD</label>
                     </div>    
                 </div>
@@ -99,21 +109,21 @@
             <div class="flex-container">
                 <div class="div-container" style="margin-bottom: 20px;" >
                     <label for="buy-date">შეძენის რიცხვი (არჩევითი)</label>
-                    <input type="text" name="buy-date" class="input" id="buy-date" placeholder="დდ / თთ / წწწწ">                     
+                    <input type="date" name="buy-date" class="input" id="buy-date" placeholder="დდ / თთ / წწწწ">                     
                 </div>
-                <div class="div-container">
+                <div class="div-container laptop-price-container">
                     <label for="laptop-price">ლეპტოპის ფასი</label>
                     <input type="text" name="laptop-price" class="input" id="laptop-price" placeholder="0000 ₾"> 
                     <p class="paragraph">მხოლოდ ციფრები</p>
                 </div>
             </div>
             <div class="flex-container">
-                <div class="div-container">
-                    <h4>ლეპტოპის მდგომარეობა</h4>
+                <div class="div-container state-container">
+                    <h4>ლეპტოპის მდგომარეობა <span class="photo-warning"><img src="assets/images/photo-warning.png" alt="warning"></span></h4>
                     <div class="radios-container">
-                        <input type="radio" name="state" class="radio" id="new">
+                        <input type="radio" name="state" class="radio" id="new" value="new">
                         <label for="new" class="label">ახალი</label>
-                        <input type="radio" name="state" class="radio" id="secondary">
+                        <input type="radio" name="state" class="radio" id="secondary" value="secondary">
                         <label for="secondary" class="label">მეორადი</label>
                     </div>    
                 </div>
