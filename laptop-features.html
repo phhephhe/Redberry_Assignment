@@ -5,8 +5,128 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redberry</title>
+    <link rel="stylesheet" href="assets/styles/reset.css">
+    <link rel="stylesheet" href="assets/styles/laptop-features/style.css">
+    <link rel="stylesheet" href="assets/styles/laptop-features/responsive.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
 </head>
 <body>
-    <h1>laptop page</h1>
+    <div class="main-container">
+        <header class="header">
+            <div>
+                <a class="back-icon" href="Employee-info.html">
+                    <img src="assets/images/Vector.png" alt="Vector">
+                </a>
+            </div>
+            <div class="header-texts">
+                <div class="employee-info">
+                        თანამშრომლის ინფო                        
+                </div>
+                <div class="laptop-features">
+                        ლეპტოპის მახასიათებლები
+                        <div class="short-line"></div>
+                        <div class="page-counter">2/2</div>
+                </div>
+            </div>    
+        </header>
+        <div class="form-container">
+            <label id="dropContainer" for="photo" class="photo-upload-container">
+                <div class="desktop-upload-photo">
+                    <span class="photo-warning"><img src="assets/images/photo-warning.png" alt="warning"></span>
+                    <h1 class="upload-text">
+                        ჩააგდე ან ატვირთე<br>ლეპტოპის ფოტო       
+                    </h1>        
+                    <div class="upload">ატვირთე
+                        <input type="file" name="phot" id="photo">
+                    </div>
+                </div>    
+                <div class="responsive-upload-photo">
+                    <img src="assets/images/photo-icon.png" alt="photo-icon">
+                    <h1 class="upload-text">
+                        ლეპტოპის ფოტოს <br> ატვირთვა       
+                    </h1>
+                    <span class="photo-warning"><img src="assets/images/photo-warning.png" alt="warning"></span>
+                </div>
+            </label>
+            <div class="flex-container">
+                <div class="div-container">
+                    <label for="laptop-name">ლეპტოპის სახელი</label>
+                    <input type="text" name="laptop-name" class="input" id="laptop-name" placeholder="HP"> 
+                    <p class="paragraph">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </p>
+                </div>
+                <div class="div-container">
+                    <select name="laptop-brand" id="laptop-brand" class="select">
+                        <option value="">ლეპტოპის ბრენდი</option>
+                    </select>
+                </div>
+            </div>
+            <div class="long-line"></div>
+            <div class="flex-container">
+                <div class="div-container">
+                    <select name="CPU" id="CPU" class="select">
+                        <option value="">CPU</option>
+                    </select>
+                </div>
+                <div class="div-container">
+                    <label for="CPU-core">CPU-ს ბირთვი</label>
+                    <input type="text" name="CPU-core" class="input" id="CPU-core" placeholder="14"> 
+                    <p class="paragraph">მხოლოდ ციფრები</p>
+                </div>
+                <div class="div-container">
+                    <label for="CPU-threads">CPU-ს ნაკადი</label>
+                    <input type="text" name="CPU-threads" class="input" id="CPU-threads" placeholder="365"> 
+                    <p class="paragraph">მხოლოდ ციფრები</p>
+                </div>
+            </div>
+            <div class="flex-container">
+                <div class="div-container">
+                    <label for="RAM">ლეპტოპის RAM (GB)</label>
+                    <input type="text" name="RAM" class="input" id="RAM" placeholder="16"> 
+                    <p class="paragraph">მხოლოდ ციფრები</p>
+                </div>
+                <div class="div-container">
+                    <h4 class="memory-title">მეხსიერების ტიპი</h4>
+                    <div class="radios-container">
+                        <input type="radio" name="memory-type" class="radio" id="ssd">
+                        <label for="ssd" class="label">SSD</label>
+                        <input type="radio" name="memory-type" class="radio" id="hdd">
+                        <label for="hdd" class="label">HDD</label>
+                    </div>    
+                </div>
+            </div>
+           
+            <div class="long-line"></div>
+            <div class="flex-container">
+                <div class="div-container" style="margin-bottom: 20px;" >
+                    <label for="buy-date">შეძენის რიცხვი (არჩევითი)</label>
+                    <input type="text" name="buy-date" class="input" id="buy-date" placeholder="დდ / თთ / წწწწ">                     
+                </div>
+                <div class="div-container">
+                    <label for="laptop-price">ლეპტოპის ფასი</label>
+                    <input type="text" name="laptop-price" class="input" id="laptop-price" placeholder="0000 ₾"> 
+                    <p class="paragraph">მხოლოდ ციფრები</p>
+                </div>
+            </div>
+            <div class="flex-container">
+                <div class="div-container">
+                    <h4>ლეპტოპის მდგომარეობა</h4>
+                    <div class="radios-container">
+                        <input type="radio" name="state" class="radio" id="new">
+                        <label for="new" class="label">ახალი</label>
+                        <input type="radio" name="state" class="radio" id="secondary">
+                        <label for="secondary" class="label">მეორადი</label>
+                    </div>    
+                </div>
+            </div>
+            <div class="back-save-buttons-container">
+                <a href="Employee-info.html" class="back">უკან</a>
+                <button type="submit" class="save-button">დამახსოვრება</button>
+            </div>
+        </div>
+        <div class="redberry-photo">
+            <img src="assets/images/Logo.png" alt="Logo">
+        </div>
+    </div>
+    <script src="assets/js/laptop-features.js"></script>
 </body>
 </html>

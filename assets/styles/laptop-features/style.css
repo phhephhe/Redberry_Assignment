@@ -1,0 +1,197 @@
+/* laptop-features styles - third pagee */
+/* header */
+.main-container{
+    width: 100%;
+    background-color: #F6F6F6;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back-icon{
+    position: absolute;
+    width: 53px;
+    height: 53px;
+    left: 70px;
+    top: 53px;
+    background-color: #D9D9D9;
+    color: #797979;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-texts{
+    display: flex;
+    padding: 91px 0px 45px;
+    gap: 66px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.5px;
+    color: #232323;
+}
+.short-line{
+    border: 1px solid black ;
+    margin: 15px 15px 0;
+}
+.page-counter{
+    display: none;
+}
+/* laptop - form */
+.form-container{
+    padding: 95px 174px 62px;
+    background-color: white;
+    max-width: 1226px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 18px;
+}
+/* image */
+.photo-upload-container{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F7F7F7;
+    border: 2px dashed #4386A9;
+    border-radius: 18px;
+}
+.desktop-upload-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input[type="file"] {
+    display: none;
+}
+.upload{
+    padding: 18px 71.5px;
+    background-color:#62A1EB;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.upload-text{
+    color: #4386A9;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 38px;
+    text-align: center;
+}
+.photo-warning{
+    display: none;
+}
+/* responsivephoto */
+.responsive-upload-photo{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* inputs */
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 50px 0px;
+}
+.div-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+}
+.input{
+    width: 100%;
+    margin: 8px 0px;
+    outline: none;
+    border: 1px solid #8AC0E2; 
+    border-radius: 5px;
+    padding: 18px 12px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+}.input:focus{
+    caret-color: #6499FF;
+    background-color: #2B4BF20F;
+}
+.memory-title{
+    margin-top: -48px;
+}
+.paragraph{
+    color: #2E2E2E;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+}
+.select{
+    width: 100%;
+    background-color: #EBEBEB;
+    border: 1.8px solid rgba(0, 0, 0, 0) ;
+    border-radius: 8px;
+    padding: 19px 16px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+}
+.long-line{
+    border: 1px solid #C7C7C7;
+}
+.radios-container{
+    margin-top: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+}
+.radio{
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4D9AC3;
+    accent-color: #4D9AC3;
+}
+.label {
+    margin-left: 15px;
+    margin-right: 50px;
+}
+/* buttons */
+.back-save-buttons-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 51px;
+}
+.back{
+    color: #62A1EB;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+}
+.save-button{
+    background-color:#62A1EB;
+    color: white;   
+    font-size: 20px;
+    padding: 18px 45.5px;
+    line-height: 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* LOGO */
+.redberry-photo{  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 67px;
+    padding-bottom: 45px;
+}

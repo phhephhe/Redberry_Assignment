@@ -1,0 +1,63 @@
+@media screen and (max-width: 760px){
+    /* header */
+    .back-icon{      
+        width: 53px;
+        height: 53px;
+        left: 7px;
+        top: 16px;
+        background-color: transparent;
+    }
+    .header-texts{
+        padding: 31px 0px 5px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .short-line{
+        display: none;
+    }
+    .laptop-features{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .page-counter{
+        display: block;
+        color: #898989;
+        font-size: 14px;
+    }
+    .employee-info, .line{
+        display: none;
+    }
+    /* photo */
+    .desktop-upload-photo {
+        display: none;
+    }
+    .responsive-upload-photo{
+        display: flex;
+    }
+    /* form */
+    .form-container{
+        padding: 30px 16px 45px;
+    }
+    .flex-container{
+        display: block;
+        margin: 30px 0px;
+    }
+    .div-container{
+        margin-top: 25px;
+    }
+    .input{
+        margin: 5px 0px;
+    }
+    .radios-container{
+        margin-top: 22px;
+        margin-bottom: 0px;
+    }
+    .memory-title{
+        margin-top: 0px;
+    }
+    /* LOGO */
+    .redberry-photo{  
+        display: none;
+    }
+}
