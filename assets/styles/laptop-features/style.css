@@ -59,6 +59,13 @@
     border: 2px dashed #4386A9;
     border-radius: 18px;
 }
+.desktop-upload-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 423px;
+}
 .photo-uploaded{
     display: none;
     width: 100%;
@@ -69,12 +76,7 @@
     height: 423px;
     border-radius: 18px;
 }
-.desktop-upload-photo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
 input[type="file"] {
     display: none;
 }
@@ -84,8 +86,23 @@ input[type="file"] {
     color: white;
     cursor: pointer;
     border-radius: 8px;
+    margin-bottom: 115px;
+}
+.upload-again{
+    padding: 18px 24.5px;
+    background-color:#62A1EB;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.upload-again-container{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 25px;
 }
 .upload-text{
+    margin: 175px 0px 65px;
     color: #4386A9;
     font-weight: 500;
     font-size: 20px;
@@ -94,6 +111,13 @@ input[type="file"] {
 }
 .photo-warning{
     display: none;
+    width: 22px;
+    height: 20px;
+}
+.photo-warning img{
+    /* display: none; */
+    width: 22px;
+    height: 20px;
 }
 /* responsivephoto */
 .responsive-upload-photo{
@@ -225,9 +249,13 @@ input[type="file"] {
     display: flex;
 }
 .valid-error h4 span{
-    padding-left: 10px;
+    margin-left: 10px;
     display: block;
 }
 .valid-error .radios-container label {
     color: black;
 } 
+.valid-error-img {
+    background-color: #FFF1F1;
+    border-color: #E52F2F;
+}

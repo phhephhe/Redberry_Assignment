@@ -29,28 +29,34 @@
                 </div>
             </div>    
         </header>
-        <div class="form-container">
+        <form class="form-container" id="form-submit" enctype="multipart/form-data">
             <label id="dropContainer" for="photo" class="photo-upload-container">
                 <div class="desktop-upload-photo photo-not-uploaded">
-                    <span class="photo-warning"><img src="assets/images/photo-warning.png" alt="warning"></span>
-                    <h1 class="upload-text">
-                        ჩააგდე ან ატვირთე<br>ლეპტოპის ფოტო       
-                    </h1>        
-                    <div class="upload">ატვირთე
-                        <input type="file" name="phot" id="photo">
+                    <div>
+                        <div><img class="photo-warning" src="assets/images/photo-warning.png" alt="warning"></div>
+                        <h1 class="upload-text">
+                            ჩააგდე ან ატვირთე<br>ლეპტოპის ფოტო       
+                        </h1>        
+                        <label class="upload">ატვირთე
+                            <input type="file" name="photo" id="photo">
+                        </label>
                     </div>
                 </div>
                 <div class="photo-uploaded">
                     <img src="" alt="" id="laptop-photo-img">
-                    <div style="display: flex; justify-content: space-between;">
-                        <div>src</div>
-                        <label for="photo">\
-                            <input type="file" name="phot" id="photo">
+                    <div class="upload-again-container">
+                        <!-- needs css -->
+                        <div style="align-items: center; display: flex; justify-content: center;">
+                            <img src="assets/images/tick.png" alt="tick">
+                            <span style="margin-left: 10px;" class="photo-source"></span>
+                        </div>
+                        <label for="photo" class="upload-again">თავიდან ატვირთე
+                            <input type="file" name="photo" id="photo">
                         </label>
                     </div>
                 </div>
                 <div class="responsive-upload-photo photo-not-uploaded">
-                    <img src="assets/images/photo-icon.png" alt="photo-icon">
+                    <img src="assets/images/photo-icon.png" alt="photo-icon" class="photo-icon">
                     <h1 class="upload-text">
                         ლეპტოპის ფოტოს <br> ატვირთვა       
                     </h1>
@@ -98,9 +104,9 @@
                     <h4 class="memory-title">მეხსიერების ტიპი <span class="photo-warning"><img src="assets/images/photo-warning.png" alt="warning"></span></h4>
                     <div class="radios-container">
                         <input type="radio" name="memory-type" class="radio" id="ssd" value="ssd">
-                        <label for="ssd" class="label">SSD</label>
+                        <label for="SSD" class="label">SSD</label>
                         <input type="radio" name="memory-type" class="radio" id="hdd" value="hdd">
-                        <label for="hdd" class="label">HDD</label>
+                        <label for="HDD" class="label">HDD</label>
                     </div>    
                 </div>
             </div>
@@ -132,7 +138,7 @@
                 <a href="Employee-info.html" class="back">უკან</a>
                 <button type="submit" class="save-button">დამახსოვრება</button>
             </div>
-        </div>
+        </form>
         <div class="redberry-photo">
             <img src="assets/images/Logo.png" alt="Logo">
         </div>

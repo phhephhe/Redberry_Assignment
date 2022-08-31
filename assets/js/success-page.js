@@ -1,4 +1,3 @@
-// remove local storages
 // employee info
 localStorage.removeItem('firstName')
 localStorage.removeItem('lastName')

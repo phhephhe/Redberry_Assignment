@@ -29,11 +29,27 @@
         display: none;
     }
     /* photo */
+    .upload-text{
+        margin-top: 10px;
+        margin-bottom: 55px;  
+        font-size: 16px; 
+        line-height: 26px;     
+    }
+    .photo-icon{
+        margin-top: 60px;
+    }
     .desktop-upload-photo {
         display: none;
     }
     .responsive-upload-photo{
         display: flex;
+        height: 181px;
+    }
+    #laptop-photo-img{
+        height: 181px;
+    }
+    .upload-again-container{
+        margin-top: 17px;
     }
     /* form */
     .form-container{

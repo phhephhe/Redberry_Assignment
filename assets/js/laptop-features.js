@@ -1,9 +1,24 @@
+let photoValid = true 
+let laptopNameValid = true
+let laptopBrandValid = true 
+let cpuValid = true 
+let coreValid = true 
+let threadsValid = true 
+let ramValid = true 
+let memoryValid = true 
+let priceValid = true 
+let stateValid = true
+
+// photo warning select
+const warningPhoto = document.querySelector('.photo-warning');
 // image
-const dropContainer = document.getElementById('dropContainer')
-const photo = document.getElementById('photo')
-const notUploadFileContainer = document.querySelectorAll('.photo-not-uploaded')
-const uploadFileContainer = document.querySelector('.photo-uploaded')
-const laptopPhodoImg = document.querySelector('#laptop-photo-img')
+const dropContainer = document.getElementById('dropContainer');
+const photo = document.getElementById('photo');
+const notUploadFileContainer = document.querySelectorAll('.photo-not-uploaded');
+const uploadFileContainer = document.querySelector('.photo-uploaded');
+const laptopPhodoImg = document.querySelector('#laptop-photo-img');
+const photoSrc = document.querySelector('.photo-source');
+let photoFile = null;
 dropContainer.ondragover = dropContainer.ondragenter = function(evt) {
     evt.preventDefault();
 };
@@ -19,16 +34,21 @@ photo.addEventListener('change', function () {
 })
 function readeImgFile(file){
     if(file) {
+        photoFile = file
+        dropContainer.classList.remove('photo-upload-container')
         const reader = new FileReader()
         reader.addEventListener('load', function() {
             notUploadFileContainer.forEach(el => {
                 el.style.display = 'none'
             })
+            photoValid = true
+            photoSrc.innerHTML = file.name + ' <br/> ' + (file.size / 1048576).toFixed(2) + " mb";
             uploadFileContainer.style.display = 'block'
             laptopPhodoImg.setAttribute('src', this.result)
+            dropContainer.classList.remove('valid-error-img')
         })
         reader.readAsDataURL(file)
-    }
+    }  
 }
 // validation
 
@@ -44,13 +64,16 @@ laptopName.addEventListener('change', el => {
     if(!el.target.value.trim()){
         laptopContainer.classList.add('valid-error')
         laptopParagraph.innerHTML = 'ეს ველი სავალდებულოა'
+        laptopNameValid = false
     } else if(!el.target.value.trim().match(regexEngAndSpecialChars)){
         laptopContainer.classList.add('valid-error')
         laptopParagraph.innerHTML = 'ველი უნდა შეიცავდეს მხოლოდ ლათინურ სიმბოლოებს, რიცხვებსა და !@#$%^&*()_+='
+        laptopNameValid = false
     } else {
         laptopContainer.classList.remove('valid-error')
         laptopParagraph.innerHTML = 'ლათინური ასოები, ციფრები, !@#$%^&*()_+='
         localStorage.setItem('laptopName', el.target.value.trim())
+        laptopNameValid = true
     }
 })
 // fetch brands
@@ -73,15 +96,17 @@ fetch('https://pcfy.redberryinternship.ge/api/brands')
 
 
 //validation brands
-function required (value, selectItem){
+function required (value, selectItem,valid){
     if(!value){
         selectItem.classList.add('valid-error')
+        valid = false
     }else{
         selectItem.classList.remove('valid-error')
+        valid = true
     }
 }
 laptopBrandSelect.addEventListener('change', (el) => {
-    required(el.target.value, laptopBrandsContainer)
+    required(el.target.value, laptopBrandsContainer, laptopBrandValid)
     localStorage.setItem('laptopBrand', el.target.value)
 })
 
@@ -95,33 +120,36 @@ fetch('https://pcfy.redberryinternship.ge/api/cpus')
         data.data.forEach(item => {
             const optionCPU = document.createElement('option');
             optionCPU.innerHTML = item.name ;
-            optionCPU.value = item.id;
+            optionCPU.value = item.name;
             selectCPU.appendChild(optionCPU);
-            if(localStorage.getItem('cpu') && item.id == localStorage.getItem('cpu')){
+            if(localStorage.getItem('cpu') && item.name == localStorage.getItem('cpu')){
                 optionCPU.selected = true
             }
         })
     })
 
-// validation
+// validation cpu
 selectCPU.addEventListener('change', (el) => {
-    required(el.target.value, containerCPU);
+    required(el.target.value, containerCPU, cpuValid);
     localStorage.setItem('cpu', el.target.value)
 })
 
 
 // CPU-core,CPU-threads, Buy-time validation
-function numberInputValidation(value, container, paragraph, name){
+function numberInputValidation(value, container, paragraph, name, valid){
     if(!value){
         container.classList.add('valid-error');
         paragraph.innerHTML = 'ეს ველი სავალდებულოა';
+        valid = false
     }else if(!value.match(/^[0-9]*$/)){
         container.classList.add('valid-error');
         paragraph.innerHTML = 'გამოიყენეთ მხოლოდ ციფრები';
+        valid = false
     } else{
         container.classList.remove('valid-error');
         paragraph.innerHTML = 'მხოლოდ ციფრები';
         localStorage.setItem(name, value)
+        valid = true
     }
 }
 
@@ -134,16 +162,16 @@ coreCPU.value = localStorage.getItem('core') ? localStorage.getItem('core') : ''
 
 
 coreCPU.addEventListener('change', (el) => {
-    numberInputValidation(el.target.value.trim(), coreCPUcontainer, coreParagraph, 'core');
+    numberInputValidation(el.target.value.trim(), coreCPUcontainer, coreParagraph, 'core', coreValid);
 })
-// state validation
+// threads validation
 const threadsCPU = document.getElementById('CPU-threads');
 const threadsCPUcontainer = document.querySelector('.CPU-threads-container');
 const threadsParagraph = document.querySelector('.CPU-threads-container p');
 threadsCPU.value = localStorage.getItem('threads') ? localStorage.getItem('threads') : '';
 
 threadsCPU.addEventListener('change', (el) => {
-    numberInputValidation(el.target.value.trim(), threadsCPUcontainer, threadsParagraph, 'threads');
+    numberInputValidation(el.target.value.trim(), threadsCPUcontainer, threadsParagraph, 'threads', threadsValid);
 })
 // RAM validtion
 const RAM = document.getElementById('RAM');
@@ -152,7 +180,7 @@ const paragraphRAM = document.querySelector('.RAM-container p');
 RAM.value = localStorage.getItem('ram') ? localStorage.getItem('ram') : '';
 
 RAM.addEventListener('change', (el) => {
-    numberInputValidation(el.target.value.trim(), containerRAM, paragraphRAM, 'ram');
+    numberInputValidation(el.target.value.trim(), containerRAM, paragraphRAM, 'ram', ramValid);
 })
 // laptop price
 const laptopPrice = document.getElementById('laptop-price');
@@ -161,7 +189,7 @@ const laptopPriceParagraph = document.querySelector('.laptop-price-container p')
 laptopPrice.value = localStorage.getItem('price') ? localStorage.getItem('price') : '';
 
 laptopPrice.addEventListener('change', (el)=> {
-    numberInputValidation(el.target.value.trim(), laptopPriceContainer, laptopPriceParagraph, 'price')
+    numberInputValidation(el.target.value.trim(), laptopPriceContainer, laptopPriceParagraph, 'price', priceValid)
 });
 
 // buy-date not required
@@ -187,9 +215,13 @@ if(localStorage.getItem('memoryType') && hdd.value == localStorage.getItem('memo
 
 ssd.addEventListener('click', (el) => {
     localStorage.setItem('memoryType', el.target.value)
+    memoryTypeContainer.classList.remove('valid-error')
+    memoryValid = true
 })
 hdd.addEventListener('click', (el) => {
     localStorage.setItem('memoryType', el.target.value)
+    memoryTypeContainer.classList.remove('valid-error')
+    memoryValid = true
 })
 // radios state 
 const stateContainer = document.querySelector('.state-container');
@@ -206,7 +238,130 @@ if(localStorage.getItem('state') && secondaryLaptop.value == localStorage.getIte
 
 newLaptop.addEventListener('click', (el) => {
     localStorage.setItem('state', el.target.value);
+    stateContainer.classList.remove('valid-error');
+    warning.style.display = 'none'
+    stateValid = true
 })
 secondaryLaptop.addEventListener('click', (el) => {
     localStorage.setItem('state', el.target.value);
+    stateContainer.classList.remove('valid-error')
+    warning.style.display = 'none'
+    stateValid = true
+})
+
+
+
+// submit form 
+const submitForm = document.getElementById('form-submit')
+
+submitForm.addEventListener('submit', (el) => {
+    el.preventDefault()
+    if(!photo.value){
+        dropContainer.classList.add('valid-error-img');
+        // text red da warning photo----------------------------------------------------
+        warningPhoto.style.display = 'block'
+        photoValid = false
+    }
+    if(!laptopName.value){
+        laptopContainer.classList.add('valid-error')
+        laptopParagraph.innerHTML = 'ეს ველი სავალდებულოა'
+        laptopNameValid = false
+    }
+    if(!laptopBrandSelect.value){
+        laptopBrandsContainer.classList.add('valid-error');
+        laptopBrandValid = false
+    }
+    if(!selectCPU.value){
+        containerCPU.classList.add('valid-error');
+        cpuValid = false
+    }
+    if(!coreCPU.value){
+        coreCPUcontainer.classList.add('valid-error');
+        coreParagraph.innerHTML = 'ეს ველი სავალდებულოა';
+        coreValid = false
+    }
+    if(!threadsCPU.value){
+        threadsCPUcontainer.classList.add('valid-error');
+        threadsParagraph.innerHTML = 'ეს ველი სავალდებულოა'
+        threadsValid = false
+    }
+    if(!RAM.value){
+        containerRAM.classList.add('valid-error');
+        paragraphRAM.innerHTML = 'ეს ველი სავალდებულოა'
+        ramValid = false
+    }
+    if(!localStorage.getItem('memoryType')){
+        memoryTypeContainer.classList.add('valid-error')
+        memoryValid = false
+    }
+    if(!laptopPrice.value){
+        laptopPriceContainer.classList.add('valid-error');
+        laptopPriceParagraph.innerHTML = 'ეს ველი სავალდებულოა'
+        priceValid = false
+    }
+    if(!localStorage.getItem('state')){
+        stateContainer.classList.add('valid-error')
+        stateValid = false
+    }
+
+    console.log(photoValid &&
+        laptopNameValid &&
+        laptopBrandValid  &&
+        cpuValid  &&
+        coreValid  &&
+        threadsValid  &&
+        ramValid  &&
+        memoryValid  &&
+        priceValid  &&
+        stateValid )
+
+    if(
+        photoValid &&
+        laptopNameValid &&
+        laptopBrandValid  &&
+        cpuValid  &&
+        coreValid  &&
+        threadsValid  &&
+        ramValid  &&
+        memoryValid  &&
+        priceValid  &&
+        stateValid 
+    ){
+        console.log('gaiara validacia');
+
+        const formData = new FormData();
+        formData.append('name', localStorage.getItem('firstName'))
+        formData.append('surname', localStorage.getItem('lastName'))
+        formData.append('team_id', localStorage.getItem('team'))
+        formData.append('position_id', localStorage.getItem('position'))
+        formData.append('phone_number', localStorage.getItem('mobile'))
+        formData.append('email', localStorage.getItem('email'))
+        formData.append('token', 'bc715926e15b39ce089b2cd82e025c2c')
+        formData.append('laptop_name', localStorage.getItem('laptopName'))
+        formData.append('laptop_image', photoFile)
+        formData.append('laptop_brand_id', localStorage.getItem('laptopBrand'))
+        formData.append('laptop_cpu', localStorage.getItem('cpu'))
+        formData.append('laptop_cpu_cores', localStorage.getItem('core'))
+        formData.append('laptop_cpu_threads', localStorage.getItem('threads'))
+        formData.append('laptop_ram', localStorage.getItem('ram'))
+        formData.append('laptop_hard_drive_type', localStorage.getItem('memoryType'))
+        formData.append('laptop_state', localStorage.getItem('state'))
+        formData.append('laptop_purchase_date', localStorage.getItem('buyDate'))
+        formData.append('laptop_price', localStorage.getItem('price'))
+        console.log(formData)
+
+        fetch('https://pcfy.redberryinternship.ge/api/laptop/create',
+        {
+            method: 'POST',
+            body: formData
+        })  
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            window.location.href = "success-page.html";
+        })
+        .catch(e => {
+            console.log(e);
+        })
+    }
 })
