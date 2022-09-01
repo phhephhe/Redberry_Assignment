@@ -126,15 +126,14 @@ input[type="file"] {
     font-size: 20px;
     line-height: 38px;
     text-align: center;
+    margin-top: 19px;
 }
 .photo-warning{
     display: none;
-    width: 22px;
-    height: 20px;
 }
 .photo-warning img{
-    width: 22px;
-    height: 20px;
+    width: 38px;
+    height: 34px;
 }
 /* responsivephoto */
 .responsive-upload-photo{
@@ -281,4 +280,9 @@ input[type="file"] {
 }
 .valid-error-img .photo-warning{
     display: block;
+}
+
+.valid-error h4 .photo-warning img {
+    width: 22px;
+    height: 20px;
 }
