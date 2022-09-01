@@ -18,6 +18,7 @@ const notUploadFileContainer = document.querySelectorAll('.photo-not-uploaded');
 const uploadFileContainer = document.querySelector('.photo-uploaded');
 const laptopPhodoImg = document.querySelector('#laptop-photo-img');
 const photoSrc = document.querySelector('.photo-source');
+const photoData = document.querySelector('.photo-data')
 let photoFile = null;
 dropContainer.ondragover = dropContainer.ondragenter = function(evt) {
     evt.preventDefault();
@@ -42,15 +43,16 @@ function readeImgFile(file){
                 el.style.display = 'none'
             })
             photoValid = true
-            photoSrc.innerHTML = file.name + ' <br/> ' + (file.size / 1048576).toFixed(2) + " mb";
-            uploadFileContainer.style.display = 'block'
+            photoSrc.innerHTML = file.name ;
+            photoData.innerHTML = (file.size / 1048576).toFixed(2) + " mb";
+            uploadFileContainer.style.display = 'flex'
             laptopPhodoImg.setAttribute('src', this.result)
             dropContainer.classList.remove('valid-error-img')
         })
         reader.readAsDataURL(file)
     }  
 }
-// validation
+// VALIDATION
 
 //select laptopName
 const laptopContainer = document.querySelector('.laptop-name-container')
@@ -239,13 +241,11 @@ if(localStorage.getItem('state') && secondaryLaptop.value == localStorage.getIte
 newLaptop.addEventListener('click', (el) => {
     localStorage.setItem('state', el.target.value);
     stateContainer.classList.remove('valid-error');
-    warning.style.display = 'none'
     stateValid = true
 })
 secondaryLaptop.addEventListener('click', (el) => {
     localStorage.setItem('state', el.target.value);
     stateContainer.classList.remove('valid-error')
-    warning.style.display = 'none'
     stateValid = true
 })
 
@@ -258,8 +258,6 @@ submitForm.addEventListener('submit', (el) => {
     el.preventDefault()
     if(!photo.value){
         dropContainer.classList.add('valid-error-img');
-        // text red da warning photo----------------------------------------------------
-        warningPhoto.style.display = 'block'
         photoValid = false
     }
     if(!laptopName.value){

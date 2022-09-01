@@ -58,6 +58,7 @@
     background-color: #F7F7F7;
     border: 2px dashed #4386A9;
     border-radius: 18px;
+    
 }
 .desktop-upload-photo{
     display: flex;
@@ -68,6 +69,9 @@
 }
 .photo-uploaded{
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 #laptop-photo-img{
@@ -86,7 +90,7 @@ input[type="file"] {
     color: white;
     cursor: pointer;
     border-radius: 8px;
-    margin-bottom: 115px;
+    margin-top: 50px;
 }
 .upload-again{
     padding: 18px 24.5px;
@@ -96,13 +100,27 @@ input[type="file"] {
     border-radius: 8px;
 }
 .upload-again-container{
+    width: 100%;
     display: flex; 
     justify-content: space-between; 
     align-items: center;
     margin-top: 25px;
 }
+.tick-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.photo-data-container{
+    margin-left: 20px;
+    display: flex;
+    font-size: 18px;
+}
+.photo-data-container .photo-data {
+    margin-left: 20px;
+    color: #5F5F5F;
+}
 .upload-text{
-    margin: 175px 0px 65px;
     color: #4386A9;
     font-weight: 500;
     font-size: 20px;
@@ -115,16 +133,12 @@ input[type="file"] {
     height: 20px;
 }
 .photo-warning img{
-    /* display: none; */
     width: 22px;
     height: 20px;
 }
 /* responsivephoto */
 .responsive-upload-photo{
     display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 /* inputs */
 .flex-container{
@@ -231,6 +245,7 @@ input[type="file"] {
     padding-bottom: 45px;
 }
 /* VALIDATION ERROR */
+/* for inputs */
 .valid-error{
     color: #E52F2F;
 }
@@ -241,21 +256,29 @@ input[type="file"] {
     border-color: #E52F2F; 
 } 
 /* select error */
-.valid-error select{
+.valid-error select {
     border-color:  #E52F2F;
 }
+/* warning photo error for radios */
 .valid-error h4{
     color: #E52F2F;
     display: flex;
 }
-.valid-error h4 span{
+.valid-error h4 span {
     margin-left: 10px;
     display: block;
 }
 .valid-error .radios-container label {
     color: black;
 } 
+/* upload photo valid errors */
 .valid-error-img {
     background-color: #FFF1F1;
     border-color: #E52F2F;
+}
+.valid-error-img div .upload-text{
+    color: #E52F2F;
+}
+.valid-error-img .photo-warning{
+    display: block;
 }

@@ -31,8 +31,8 @@
         </header>
         <form class="form-container" id="form-submit" enctype="multipart/form-data">
             <label id="dropContainer" for="photo" class="photo-upload-container">
+                <!-- for desktop -->
                 <div class="desktop-upload-photo photo-not-uploaded">
-                    <div>
                         <div><img class="photo-warning" src="assets/images/photo-warning.png" alt="warning"></div>
                         <h1 class="upload-text">
                             ჩააგდე ან ატვირთე<br>ლეპტოპის ფოტო       
@@ -40,28 +40,32 @@
                         <label class="upload">ატვირთე
                             <input type="file" name="photo" id="photo">
                         </label>
-                    </div>
                 </div>
+                <!-- for responsive -->
+                <div class="responsive-upload-photo photo-not-uploaded">
+                    <img src="assets/images/photo-icon.png" alt="photo-icon" class="photo-icon">
+                    <h1 class="upload-text">
+                        ლეპტოპის ფოტოს <br> ატვირთვა       
+                    </h1>
+                    <div class="photo-warning"><img src="assets/images/photo-warning.png" alt="warning"></div>
+                </div>
+                <!-- uploaded -->
                 <div class="photo-uploaded">
                     <img src="" alt="" id="laptop-photo-img">
                     <div class="upload-again-container">
-                        <!-- needs css -->
-                        <div style="align-items: center; display: flex; justify-content: center;">
+                        <div class="tick-container">
                             <img src="assets/images/tick.png" alt="tick">
-                            <span style="margin-left: 10px;" class="photo-source"></span>
+                            <div class="photo-data-container">
+                                <span class="photo-source"></span>
+                                <span class="photo-data"></span>
+                            </div>    
                         </div>
                         <label for="photo" class="upload-again">თავიდან ატვირთე
                             <input type="file" name="photo" id="photo">
                         </label>
                     </div>
                 </div>
-                <div class="responsive-upload-photo photo-not-uploaded">
-                    <img src="assets/images/photo-icon.png" alt="photo-icon" class="photo-icon">
-                    <h1 class="upload-text">
-                        ლეპტოპის ფოტოს <br> ატვირთვა       
-                    </h1>
-                    <span class="photo-warning"><img src="assets/images/photo-warning.png" alt="warning"></span>
-                </div>
+                
             </label>
             
             <div class="flex-container">
