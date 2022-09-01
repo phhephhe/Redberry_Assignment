@@ -301,18 +301,6 @@ submitForm.addEventListener('submit', (el) => {
         stateContainer.classList.add('valid-error')
         stateValid = false
     }
-
-    console.log(photoValid &&
-        laptopNameValid &&
-        laptopBrandValid  &&
-        cpuValid  &&
-        coreValid  &&
-        threadsValid  &&
-        ramValid  &&
-        memoryValid  &&
-        priceValid  &&
-        stateValid )
-
     if(
         photoValid &&
         laptopNameValid &&

@@ -1,0 +1,46 @@
+.main-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4A4A4A;
+}
+.popup-container{
+    width: 847px;
+    height: 537px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+}
+.success-text{
+    color: #292929;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 31px;
+    margin-bottom: 80px;
+}
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.go-to-listPage{
+    padding: 18px 64px;
+    background-color: #62A1EB;
+    color: white;
+    border-radius: 8px;
+}
+.go-to-mainPage{
+    color: #0089A7;
+}

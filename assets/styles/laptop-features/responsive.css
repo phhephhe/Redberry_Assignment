@@ -52,6 +52,18 @@
     .upload-again-container{
         margin-top: 17px;
     }
+    .upload-again{
+        width: 200px;
+        height: 50px;
+        padding: 0px;
+        background-color:#62A1EB;
+        color: white;
+        cursor: pointer;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .photo-data-container{
         margin-left: 10px;
         display: flex;

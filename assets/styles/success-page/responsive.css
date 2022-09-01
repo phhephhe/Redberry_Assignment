@@ -1,0 +1,12 @@
+@media screen and (max-width: 760px){
+    .main-container{
+        background-color: white;
+    }
+    .popup-container{
+        padding: 170px 45px 70px;
+    }
+    .success-text{
+        text-align: center;
+        margin-bottom: 155px;
+    }
+}
