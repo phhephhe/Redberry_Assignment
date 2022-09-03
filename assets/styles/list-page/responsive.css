@@ -1,0 +1,44 @@
+@media screen and (max-width: 760px){
+    /* header */
+    .back-icon{      
+        width: 53px;
+        height: 53px;
+        left: 7px;
+        top: 16px;
+        background-color: transparent;
+    }
+    .header-texts{
+        padding-top: 31px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    /* grid container */
+    .grid-container{
+        padding: 33px 16px 51px;
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+    .computer-img{
+        width: 164px;
+        height: 109px;
+    }
+    .left-row{
+        padding: 7px;
+    }
+    .right-row{
+        margin: 0px;
+        padding-left: 10px;
+    }
+    /* usser text */
+    .user-pc-names {
+        margin-top: 20px;
+        margin-bottom: 11px;
+        gap: 8px;
+    }
+    .user-pc-names p:first-child{
+        font-size: 14px;
+    }
+    .see-more{
+        font-size: 14px;
+    }
+}

@@ -332,7 +332,7 @@ submitForm.addEventListener('submit', (el) => {
         formData.append('laptop_ram', localStorage.getItem('ram'))
         formData.append('laptop_hard_drive_type', localStorage.getItem('memoryType'))
         formData.append('laptop_state', localStorage.getItem('state'))
-        formData.append('laptop_purchase_date', localStorage.getItem('buyDate'))
+        formData.append('laptop_purchase_date', localStorage.getItem('buyDate') ?? '')
         formData.append('laptop_price', localStorage.getItem('price'))
         console.log(formData)
 
@@ -343,8 +343,11 @@ submitForm.addEventListener('submit', (el) => {
         })  
         .then(response => response.json())
         .then(data => {
-            console.log(data)
-            window.location.href = "success-page.html";
+            if(data.errors){
+                console.log(data)
+            } else {
+             window.location.href = "success-page.html";
+            }
         })
         .catch(e => {
             console.log(e);

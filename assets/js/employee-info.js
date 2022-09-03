@@ -207,7 +207,7 @@ mobile.addEventListener('change', (el) => {
         mobileParagraph.style.display = 'none'
         mobileValid = false;
     } else{
-        localStorage.setItem('mobile', el.target.value.trim())
+        localStorage.setItem('mobile', el.target.value.trim().replaceAll(' ', ''))
         mobileContainer.classList.remove('valid-error');
         mobileErrorMessage.style.display = 'none';
         mobileParagraph.style.display = 'block'

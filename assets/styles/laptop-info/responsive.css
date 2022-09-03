@@ -1,0 +1,78 @@
+@media screen and (max-width: 760px){
+    /* header */
+    .back-icon{      
+        width: 53px;
+        height: 53px;
+        left: 7px;
+        top: 16px;
+        background-color: transparent;
+    }
+    .header-texts{
+        padding-top: 31px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    /* inner container */
+    .inner-container{
+        padding: 25px 15px 15px;
+     }
+    .first-row{
+        display: block;
+        height: auto;
+    }
+    .laptop-img{
+        width: 100%;
+    }
+    .laptop-img img{
+        width: 358px;
+        height: 191px;
+    }
+    .user-info-container{
+        padding: 30px 0px 0px;
+        font-size: 14px;
+        width: 100%;
+    }
+    /* line */
+    .long-line{
+        margin: 23px 0px;
+    }
+    /* second row */
+    .second-row{
+        flex-direction: column;
+        gap: 10px;
+    } 
+    .laptop-info-container{
+        color: #2E2E2E;
+        gap: 30px;
+        width: 100%;
+        font-size: 14px;
+    }
+    .laptop-height{
+        height: 100px;
+        gap: 31px;
+    }
+    .CPU-height{
+        height: 80px;
+        gap: 74px;
+    }
+    /* third row */
+    .third-row{
+        flex-direction: column;
+        gap: 0px;
+    }
+    .addition-info-container{
+        gap: 61px;
+        color: #2E2E2E;
+        font-size: 14px;
+        width: 100%;
+    }
+    .addition-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 50px;
+    }
+    .none-laptop{
+        display: none;
+    }
+}
