@@ -1,5 +1,6 @@
 const laptopId = localStorage.getItem('laptopId');
 console.log(laptopId);
+const laptopImage = document.getElementById('laptopImage');
 const firstName = document.getElementById('firstName');
 const Team = document.getElementById('team');
 const position = document.getElementById('position');
@@ -56,7 +57,9 @@ function positionId(id){
 // name
 fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=bc715926e15b39ce089b2cd82e025c2c`)
     .then(response => response.json())
-    .then(data => {      
+    .then(data => {
+        //image
+        laptopImage.src = 'https://pcfy.redberryinternship.ge' + data.data.laptop.image
         // user 
         firstName.innerHTML = data.data.user.name;
         team(data.data.user.team_id)
