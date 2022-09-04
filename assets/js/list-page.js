@@ -3,10 +3,7 @@ const laptopsList = document.getElementById('laptops-list');
 fetch('https://pcfy.redberryinternship.ge/api/laptops?token=bc715926e15b39ce089b2cd82e025c2c')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
-        console.log(data.data);
         data.data.forEach(item => {
-            console.log(item)
             const laptopContainer = document.createElement('div')
             laptopContainer.classList.add('grid-item')
 
@@ -43,7 +40,7 @@ fetch('https://pcfy.redberryinternship.ge/api/laptops?token=bc715926e15b39ce089b
                 localStorage.setItem('laptopId', item.laptop.id)
                 window.location.href = "laptop-info.html";
             })
-            
             laptopsList.appendChild(laptopContainer)
         })
     })
+

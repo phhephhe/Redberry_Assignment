@@ -58,6 +58,7 @@
     line-height: 21px;
     color: #2E2E2E;
     margin-bottom: 40px;
+    margin-left: 5px;
     display: flex;
     flex-direction: column;
     gap: 20px;
