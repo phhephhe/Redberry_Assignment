@@ -17,9 +17,6 @@ const state = document.getElementById('state');
 const price = document.getElementById('price');
 const date = document.getElementById('date');
 
-
-
-
 function team(id) {
     fetch('https://pcfy.redberryinternship.ge/api/teams')
         .then(response => response.json())
@@ -28,7 +25,7 @@ function team(id) {
                 if(id == element.id){
                     Team.innerHTML = element.name
                 }
-            });      
+            })      
         })
 }
 function brand(id){
@@ -48,36 +45,36 @@ function positionId(id){
         .then(data => {
             data.data.forEach(element => {
                 if(id == element.id){
-                    position.innerHTML = element.name
+                    position.innerHTML = element.name;
                 }
             })
         })
-}
+};
 
 // name
 fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=bc715926e15b39ce089b2cd82e025c2c`)
     .then(response => response.json())
     .then(data => {
         //image
-        laptopImage.src = 'https://pcfy.redberryinternship.ge' + data.data.laptop.image
+        laptopImage.src = 'https://pcfy.redberryinternship.ge' + data.data.laptop.image;
         // user 
         firstName.innerHTML = data.data.user.name;
-        team(data.data.user.team_id)
-        positionId(data.data.user.position_id)
+        team(data.data.user.team_id);
+        positionId(data.data.user.position_id);
         email.innerHTML = data.data.user.email;
         mobile.innerHTML = data.data.user.phone_number;
         // laptop
         laptopName.innerHTML = data.data.laptop.name;
-        brand(data.data.user.brand_id)
-        RAM.innerHTML = data.data.laptop.ram
-        memoryType.innerHTML = data.data.laptop.hard_drive_type
-        CPU.innerHTML = data.data.laptop.cpu.name
-        coreCPU.innerHTML = data.data.laptop.cpu.cores
-        threadCPU.innerHTML = data.data.laptop.cpu.threads
-        state.innerHTML = data.data.laptop.state
-        price.innerHTML = data.data.laptop.price
-        date.innerHTML = data.data.laptop.purchase_date
+        brand(data.data.user.brand_id);
+        RAM.innerHTML = data.data.laptop.ram;
+        memoryType.innerHTML = data.data.laptop.hard_drive_type;
+        CPU.innerHTML = data.data.laptop.cpu.name;
+        coreCPU.innerHTML = data.data.laptop.cpu.cores;
+        threadCPU.innerHTML = data.data.laptop.cpu.threads;
+        state.innerHTML = data.data.laptop.state;
+        price.innerHTML = data.data.laptop.price;
+        date.innerHTML = data.data.laptop.purchase_date;
     })
     .catch(e => {
-        console.log('ERROR -> ', e)
-    })
+        console.log('ERROR -> ', e);
+    });

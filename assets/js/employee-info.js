@@ -1,9 +1,9 @@
-let firstNameValid = true 
-let lastNameValid = true
-let teamValid = true 
-let positionValid = true 
-let emailValid = true 
-let mobileValid = true 
+let firstNameValid = true; 
+let lastNameValid = true;
+let teamValid = true;
+let positionValid = true;
+let emailValid = true; 
+let mobileValid = true; 
 // select firstName
 const firstName = document.getElementById('firstname');
 const firstNameContainer = document.querySelector('.firstname');
@@ -15,20 +15,20 @@ firstName.addEventListener('change', (el) => {
     if(!el.target.value.trim()) {
         firstNameContainer.classList.add('valid-error');
         firstNameErrorMessage.innerHTML = 'ეს ველი სავალდებულოა';
-        firstNameValid = false
+        firstNameValid = false;
     }else if(el.target.value.trim().length < 2){
         firstNameContainer.classList.add('valid-error');
         firstNameErrorMessage.innerHTML = 'გამოიყენეთ მინიმუმ 2 სიმბოლო';
-        firstNameValid = false
+        firstNameValid = false;
     } else if (!checkLang(el.target.value.trim())) {
         firstNameContainer.classList.add('valid-error');
         firstNameErrorMessage.innerHTML = 'გამოიყენეთ მხოლოდ ქართული სიმბოლოები';
-        firstNameValid = false
+        firstNameValid = false;
     } else {
-        localStorage.setItem('firstName', el.target.value.trim())
+        localStorage.setItem('firstName', el.target.value.trim());
         firstNameContainer.classList.remove('valid-error');
         firstNameErrorMessage.innerHTML = 'მინიმუმ 2 სიმბოლო, ქართული ასოები';
-        firstNameValid = true
+        firstNameValid = true;
     }
 });
 
@@ -73,8 +73,6 @@ function checkLang(text = '') {
 const teamSelect = document.getElementById('team');
 const teamSelectContainer = document.querySelector('.team-select-container');
 //local storage
-// const teamSelected = localStorage.getItem('team') ? localStorage.getItem('team') : '';
-// console.log(teamSelected)
 
 // fetch team options
 fetch('https://pcfy.redberryinternship.ge/api/teams')
@@ -86,7 +84,7 @@ fetch('https://pcfy.redberryinternship.ge/api/teams')
             option.innerHTML = item.name;
             teamSelect.appendChild(option);
             if(localStorage.getItem('team') && item.id == localStorage.getItem('team')) {
-                option.selected = true
+                option.selected = true;
                 postionSelectFetch(item.id);
             }
         })
@@ -95,7 +93,7 @@ fetch('https://pcfy.redberryinternship.ge/api/teams')
 
 //team validation
 teamSelect.addEventListener('change', (el) => {
-    localStorage.removeItem('position')
+    localStorage.removeItem('position');
 
     if(!el.target.value.trim()){
         teamSelectContainer.classList.add('valid-error');
@@ -109,11 +107,11 @@ teamSelect.addEventListener('change', (el) => {
 });
 
 // select position select
-const positionSelect = document.getElementById('position')
-const positionSelectContainer = document.querySelector('.position-select-container')
-const defalutOption = document.createElement('option')
-defalutOption.value = ''
-defalutOption.innerHTML = 'პოზიცია'
+const positionSelect = document.getElementById('position');
+const positionSelectContainer = document.querySelector('.position-select-container');
+const defalutOption = document.createElement('option');
+defalutOption.value = '';
+defalutOption.innerHTML = 'პოზიცია';
 // local storage
 
 // fetch position options
@@ -121,16 +119,16 @@ function postionSelectFetch(teamId){
     fetch('https://pcfy.redberryinternship.ge/api/positions')
         .then(response => response.json())
         .then(data => {
-            positionSelect.innerHTML = ''
-            positionSelect.appendChild(defalutOption)
+            positionSelect.innerHTML = '';
+            positionSelect.appendChild(defalutOption);
             data.data.forEach(item => {
                 if(teamId == item.team_id){
                     const option = document.createElement('option');
-                    option.value = item.id
-                    option.innerHTML = item.name
-                    positionSelect.appendChild(option)
+                    option.value = item.id;
+                    option.innerHTML = item.name;
+                    positionSelect.appendChild(option);
                     if(localStorage.getItem('position') && item.id == localStorage.getItem('position')) {
-                        option.selected = true
+                        option.selected = true;
                     }
                 }
             })
@@ -140,14 +138,14 @@ function postionSelectFetch(teamId){
 // position validation
 positionSelect.addEventListener('change', (el) => {
     if(!el.target.value.trim()){
-        positionSelectContainer.classList.add('valid-error')
+        positionSelectContainer.classList.add('valid-error');
         positionValid = false; 
     }else{
-        positionSelectContainer.classList.remove('valid-error')
+        positionSelectContainer.classList.remove('valid-error');
         positionValid = true;
     }
     localStorage.setItem('position', el.target.value.trim());
-})
+});
 // select email
 const email = document.getElementById('email');
 const emailContainer = document.querySelector('.email');
@@ -176,17 +174,15 @@ email.addEventListener('change', (el) => {
         emailErrorMessage.innerHTML = 'უნდა მთავრდებოდეს @redberry.ge-თი';
         emailValid = true; 
     }
-})
-
+});
 
 // select mobile
 const mobile = document.getElementById('mobile');
 const mobileContainer = document.querySelector('.mobile');
 const mobileParagraph = document.querySelector('.mobile p');
-const mobileErrorMessage = document.createElement('p')
-mobileErrorMessage.classList.add('paragraph')
+const mobileErrorMessage = document.createElement('p');
+mobileErrorMessage.classList.add('paragraph');
 // const geoNumber =  /^(+?995)?(5|79)\d{7}$/
-
 
 // local storage
 mobile.value = localStorage.getItem('mobile') ? localStorage.getItem('mobile') : '';
@@ -197,73 +193,70 @@ mobile.addEventListener('change', (el) => {
         mobileErrorMessage.innerHTML = 'ეს ველი სავალდებულოა';
         mobileErrorMessage.style.display = 'block';
         mobileContainer.appendChild(mobileErrorMessage);
-        mobileParagraph.style.display = 'none'
+        mobileParagraph.style.display = 'none';
         mobileValid = false;
     }else if(!checkNumber(el.target.value)) {
         mobileContainer.classList.add('valid-error');
         mobileErrorMessage.innerHTML = 'შეიყვანეთ ქართული მობილურის ნომერი';
         mobileErrorMessage.style.display = 'block';
         mobileContainer.appendChild(mobileErrorMessage);
-        mobileParagraph.style.display = 'none'
+        mobileParagraph.style.display = 'none';
         mobileValid = false;
     } else{
-        localStorage.setItem('mobile', el.target.value.trim().replaceAll(' ', ''))
+        localStorage.setItem('mobile', el.target.value.trim().replaceAll(' ', ''));
         mobileContainer.classList.remove('valid-error');
         mobileErrorMessage.style.display = 'none';
-        mobileParagraph.style.display = 'block'
+        mobileParagraph.style.display = 'block';
         mobileValid = true;
     }
-})
+});
 
 function checkNumber(number) {
-    let withoutSpace = number.replaceAll(' ', '')
-    let geoNum = withoutSpace.slice(0, 5)
+    let withoutSpace = number.replaceAll(' ', '');
+    let geoNum = withoutSpace.slice(0, 5);
     if(geoNum == '+9955' && withoutSpace.length === 13){
-        return true
+        return true;
     } else {
-        return false
+        return false;
     }
 }
 
-
-
 // submit form
-const form = document.getElementById('employee-info-form')
+const form = document.getElementById('employee-info-form');
 
 form.addEventListener('submit', (el) => {
     el.preventDefault();
     
-
     if(!firstName.value.trim()) {
         firstNameContainer.classList.add('valid-error');
         firstNameErrorMessage.innerHTML = 'ეს ველი სავალდებულოა';
-        firstNameValid = false
+        firstNameValid = false;
     }
     if(!lastName.value.trim()){
         lastNameContainer.classList.add('valid-error');
         lastNameErrorMessage.innerHTML = 'ეს ველი სავალდებულოა';
-        lastNameValid = false
+        lastNameValid = false;
     }
     if(!teamSelect.value.trim()){
         teamSelectContainer.classList.add('valid-error');
-        teamValid = false
+        teamValid = false;
     }
     if(!positionSelect.value.trim()){
         positionSelectContainer.classList.add('valid-error');
-        positionValid = false
+        positionValid = false;
     }
     if(!email.value.trim()){
         emailContainer.classList.add('valid-error');
         emailErrorMessage.innerHTML = 'ეს ველი სავალდებულოა';
-        emailValid = false
+        emailValid = false;
     }
     if(!mobile.value.trim()){
         mobileContainer.classList.add('valid-error');
         mobileErrorMessage.innerHTML = 'ეს ველი სავალდებულოა';
         mobileErrorMessage.style.display = 'block';
         mobileContainer.appendChild(mobileErrorMessage);
-        mobileParagraph.style.display = 'none'
-        mobileValid = false
+        mobileParagraph.style.display = 'none';
+        mobileValid = false;
     }
     if(
         firstNameValid && 
@@ -275,7 +268,7 @@ form.addEventListener('submit', (el) => {
     ) {
         window.location.href = "laptop-features.html";
     }
-})
+});
 
 
 
