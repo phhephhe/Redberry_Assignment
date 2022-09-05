@@ -66,7 +66,7 @@ fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=f82b277af
         //image
         laptopImage.src = 'https://pcfy.redberryinternship.ge' + data.data.laptop.image;
         // user 
-        firstName.innerHTML = data.data.user.name;
+        firstName.innerHTML = data.data.user.name + ' ' + data.data.user.surname;
         team(data.data.user.team_id);
         positionId(data.data.user.position_id);
         email.innerHTML = data.data.user.email;

@@ -23,7 +23,7 @@ fetch('https://pcfy.redberryinternship.ge/api/laptops?token=f82b277af6d81d49299f
             pcNames.classList.add('user-pc-names');
             const pUserName = document.createElement('p');
             const pLaptopName = document.createElement('p');
-            pUserName.innerHTML = item.user.name;
+            pUserName.innerHTML = item.user.name + ' ' + item.user.surname;
             pLaptopName.innerHTML = item.laptop.name;
             pcNames.appendChild(pUserName);
             pcNames.appendChild(pLaptopName);
