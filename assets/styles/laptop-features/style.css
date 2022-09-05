@@ -281,7 +281,6 @@ input[type="file"] {
 .valid-error-img .photo-warning{
     display: block;
 }
-
 .valid-error h4 .photo-warning img {
     width: 22px;
     height: 20px;

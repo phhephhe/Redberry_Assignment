@@ -1,6 +1,6 @@
 const laptopsList = document.getElementById('laptops-list');
 
-fetch('https://pcfy.redberryinternship.ge/api/laptops?token=bc715926e15b39ce089b2cd82e025c2c')
+fetch('https://pcfy.redberryinternship.ge/api/laptops?token=f82b277af6d81d49299fb1a624ba7c92')
     .then(response => response.json())
     .then(data => {
         data.data.forEach(item => {

@@ -1,5 +1,4 @@
 const laptopId = localStorage.getItem('laptopId');
-console.log(laptopId);
 const laptopImage = document.getElementById('laptopImage');
 const firstName = document.getElementById('firstName');
 const Team = document.getElementById('team');
@@ -27,7 +26,10 @@ function team(id) {
                 }
             })      
         })
-}
+        .catch(e => {
+            console.log('ERROR -> ', e);
+        })
+};
 function brand(id){
     fetch('https://pcfy.redberryinternship.ge/api/brands')
         .then(response => response.json())
@@ -38,7 +40,10 @@ function brand(id){
                 }
             })
         })
-}
+        .catch(e => {
+            console.log('ERROR -> ', e);
+        })
+};
 function positionId(id){
     fetch('https://pcfy.redberryinternship.ge/api/positions')
         .then(response => response.json())
@@ -49,10 +54,13 @@ function positionId(id){
                 }
             })
         })
+        .catch(e => {
+            console.log('ERROR -> ', e);
+        })
 };
 
 // name
-fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=bc715926e15b39ce089b2cd82e025c2c`)
+fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=f82b277af6d81d49299fb1a624ba7c92`)
     .then(response => response.json())
     .then(data => {
         //image
@@ -65,14 +73,14 @@ fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=bc715926e
         mobile.innerHTML = data.data.user.phone_number;
         // laptop
         laptopName.innerHTML = data.data.laptop.name;
-        brand(data.data.user.brand_id);
+        brand(data.data.laptop.brand_id);
         RAM.innerHTML = data.data.laptop.ram;
         memoryType.innerHTML = data.data.laptop.hard_drive_type;
         CPU.innerHTML = data.data.laptop.cpu.name;
         coreCPU.innerHTML = data.data.laptop.cpu.cores;
         threadCPU.innerHTML = data.data.laptop.cpu.threads;
         state.innerHTML = data.data.laptop.state;
-        price.innerHTML = data.data.laptop.price;
+        price.innerHTML = data.data.laptop.price + ' ₾';
         date.innerHTML = data.data.laptop.purchase_date;
     })
     .catch(e => {

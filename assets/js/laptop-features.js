@@ -321,7 +321,7 @@ submitForm.addEventListener('submit', (el) => {
         formData.append('position_id', localStorage.getItem('position'));
         formData.append('phone_number', localStorage.getItem('mobile'));
         formData.append('email', localStorage.getItem('email'));
-        formData.append('token', 'bc715926e15b39ce089b2cd82e025c2c');
+        formData.append('token', 'f82b277af6d81d49299fb1a624ba7c92');
         formData.append('laptop_name', localStorage.getItem('laptopName'));
         formData.append('laptop_image', photoFile);
         formData.append('laptop_brand_id', localStorage.getItem('laptopBrand'));
