@@ -1,4 +1,26 @@
-@media screen and (max-width: 760px){
+
+@media screen and (max-width: 1830px){
+    .grid-container{
+        padding: 33px 156px 51px;
+        gap: 36px;
+    }
+}
+@media screen and (max-width: 1380px){
+    .grid-container{
+        padding: 33px 56px 51px;
+    }
+}
+@media screen and (max-width: 1180px){
+    .grid-container{
+        padding: 33px 56px 51px;
+        grid-template-columns: 1fr;
+    }
+    .grid-item{
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+@media screen and (max-width: 790px){
     /* header */
     .back-icon{      
         width: 53px;
@@ -17,6 +39,9 @@
         padding: 33px 16px 51px;
         grid-template-columns: 1fr;
         gap: 26px;
+    }
+    .grid-item{
+        width: 100%;
     }
     .computer-img{
         width: 164px;
